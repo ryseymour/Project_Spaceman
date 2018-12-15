@@ -6,6 +6,10 @@ public class LevelGeneration : MonoBehaviour {
 
     public Transform[] startingPositions;
     public GameObject[] rooms;
+    public GameObject Player;
+    public GameObject SpacePod;
+    public Transform[] spriteStart;
+    public Transform[] spriteEnd;
 
     private int direction;
     public float moveAmount;
@@ -24,13 +28,21 @@ public class LevelGeneration : MonoBehaviour {
 
     private void Start()
     {
+        //Starting position with room generation
         int randStartingPos = Random.Range(0, startingPositions.Length);
         transform.position = startingPositions[randStartingPos].position;
         Instantiate(rooms[0], transform.position, Quaternion.identity);
 
         direction = Random.Range(1, 6);
-    }
 
+        //Starting position with character start
+       // int randStartingSpritePos = Random.Range(0, spriteStart.Length);
+       // transform.position = spriteStart[randStartingSpritePos].position;
+       // Instantiate(Player, transform.position, Quaternion.identity);
+
+
+    }
+    
     private void Update()
     {
         if (timeBtwRoom <= 0 && stopGeneration == false)
@@ -134,6 +146,8 @@ public class LevelGeneration : MonoBehaviour {
             {
                 stopGeneration = true;
 
+                CharacterStart();
+
             }
 
         }
@@ -141,5 +155,13 @@ public class LevelGeneration : MonoBehaviour {
         
        
 
+    }
+
+    private void CharacterStart ()
+    {
+        int randStartingSpritePos = Random.Range(0, spriteStart.Length);
+        transform.position = spriteStart[randStartingSpritePos].position;
+        Instantiate(Player, transform.position, Quaternion.identity);
+        Instantiate(SpacePod, transform.position, Quaternion.identity);
     }
 }
