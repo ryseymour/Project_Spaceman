@@ -316,6 +316,19 @@ Prefab:
       propertyPath: movingUp
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114076560918402770, guid: c6129b3c38173a04595031ae54a3bad1,
+        type: 2}
+      propertyPath: distance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884250904715708, guid: c6129b3c38173a04595031ae54a3bad1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020063278279602, guid: c6129b3c38173a04595031ae54a3bad1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6129b3c38173a04595031ae54a3bad1, type: 2}
   m_IsPrefabAsset: 0

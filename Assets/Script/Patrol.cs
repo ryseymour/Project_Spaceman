@@ -26,6 +26,13 @@ public class Patrol : MonoBehaviour {
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
         RaycastHit2D sideInfo = Physics2D.Raycast(groundDetection.position, Vector2.zero, distance);
 
+
+        Debug.DrawRay(transform.position, Vector2.down * distance, Color.red);
+
+        Debug.Log(groundInfo.collider);
+
+
+
         if (groundInfo.collider == false &&sideInfo.collider == false && VerticalMove == false)
         {
             MovingLeftRight();
